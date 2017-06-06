@@ -1,0 +1,2 @@
+# namegen
+Generate random name
