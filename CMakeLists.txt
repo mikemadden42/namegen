@@ -2,5 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(namegen CXX)
 
-add_definitions(-Wall -O2 -std=c++14 -march=native)
+set (CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic -march=native")
+
 add_executable(namegen namegen.cc)
