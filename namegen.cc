@@ -876,11 +876,11 @@ int main() {
 
     std::random_device rd_left;
     std::mt19937 gen_left(rd_left());
-    std::uniform_int_distribution<> dis_left(1, left.size());
+    std::uniform_int_distribution<> dis_left(1, static_cast<int>(left.size()));
 
     std::random_device rd_right;
     std::mt19937 gen_right(rd_right());
-    std::uniform_int_distribution<> dis_right(1, right.size());
+    std::uniform_int_distribution<> dis_right(1, static_cast<int>(right.size()));
 
     std::cout << left[dis_left(gen_left)] << '_' << right[dis_right(gen_right)]
               << std::endl;
