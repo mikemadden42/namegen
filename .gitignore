@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+# cmake build directories
+build
+debug
+release
