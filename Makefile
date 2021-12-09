@@ -1,7 +1,7 @@
 PROGRAMS = namegen
 
 CC = c++
-CFLAGS=-Wall -O2 -std=c++14
+CFLAGS=-Wall -O2 -std=c++17
 LIBS=
 
 all: $(PROGRAMS)
