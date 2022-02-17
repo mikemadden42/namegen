@@ -1,16 +1,17 @@
 // https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go
-// http://en.cppreference.com/w/cpp/container/array
+// http://en.cppreference.com/w/cpp/container/vector
 // http://en.cppreference.com/w/cpp/numeric/random/uniform_int_distribution
+// https://stackoverflow.com/questions/13935441/member-variable-of-type-stdarrayt
 
 // clang++ -Wall -O2 -std=c++14 -march=native -o names names.cc
 
-#include <array>
 #include <iostream>
 #include <random>
 #include <string>
+#include <vector>
 
 int main() {
-    std::array<std::string, 108> left = {{
+    std::vector<std::string> left = {{
         "admiring",      "adoring",     "affectionate",  "agitated",
         "amazing",       "angry",       "awesome",       "beautiful",
         "blissful",      "bold",        "boring",        "brave",
@@ -40,7 +41,13 @@ int main() {
         "xenodochial",   "youthful",    "zealous",       "zen",
     }};
 
-    std::array<std::string, 237> right = {{
+    std::vector<std::string> right = {{
+        // Maria Gaetana Agnesi - Italian mathematician, philosopher, theologian
+        // and humanitarian. She was the first woman to write a mathematics
+        // handbook and the first woman appointed as a Mathematics Professor at
+        // a University. https://en.wikipedia.org/wiki/Maria_Gaetana_Agnesi
+        "agnesi",
+
         // Muhammad ibn Jābir al-Ḥarrānī al-Battānī was a founding father of
         // astronomy.
         // https://en.wikipedia.org/wiki/Mu%E1%B8%A5ammad_ibn_J%C4%81bir_al-%E1%B8%A4arr%C4%81n%C4%AB_al-Batt%C4%81n%C4%AB
@@ -59,12 +66,6 @@ int main() {
         // original programmers of the ENIAC -
         // https://en.wikipedia.org/wiki/Kathleen_Antonelli
         "antonelli",
-
-        // Maria Gaetana Agnesi - Italian mathematician, philosopher, theologian
-        // and humanitarian. She was the first woman to write a mathematics
-        // handbook and the first woman appointed as a Mathematics Professor at
-        // a University. https://en.wikipedia.org/wiki/Maria_Gaetana_Agnesi
-        "agnesi",
 
         // Archimedes was a physicist, engineer and mathematician who invented
         // too many things to list them here.
@@ -262,25 +263,25 @@ int main() {
         // and malaria - https://en.wikipedia.org/wiki/Asima_Chatterjee
         "chatterjee",
 
-        // Pafnuty Chebyshev - Russian mathematician. He is known fo his works
-        // on probability, statistics, mechanics, analytical geometry and number
-        // theory https://en.wikipedia.org/wiki/Pafnuty_Chebyshev
-        "chebyshev",
-
-        // Bram Cohen - American computer programmer and author of the
-        // BitTorrent peer-to-peer protocol.
-        // https://en.wikipedia.org/wiki/Bram_Cohen
-        "cohen",
-
         // David Lee Chaum - American computer scientist and cryptographer.
         // Known for his seminal contributions in the field of anonymous
         // communication. https://en.wikipedia.org/wiki/David_Chaum
         "chaum",
 
+        // Pafnuty Chebyshev - Russian mathematician. He is known fo his works
+        // on probability, statistics, mechanics, analytical geometry and number
+        // theory https://en.wikipedia.org/wiki/Pafnuty_Chebyshev
+        "chebyshev",
+
         // Joan Clarke - Bletchley Park code breaker during the Second World War
         // who pioneered techniques that remained top secret for decades. Also
         // an accomplished numismatist https://en.wikipedia.org/wiki/Joan_Clarke
         "clarke",
+
+        // Bram Cohen - American computer programmer and author of the
+        // BitTorrent peer-to-peer protocol.
+        // https://en.wikipedia.org/wiki/Bram_Cohen
+        "cohen",
 
         // Jane Colden - American botanist widely considered the first female
         // American botanist - https://en.wikipedia.org/wiki/Jane_Colden
@@ -302,9 +303,10 @@ int main() {
         // This entry reflects a husband and wife team who worked together:
         // Joan Curran was a Welsh scientist who developed radar and invented
         // chaff, a radar countermeasure.
-        // https://en.wikipedia.org/wiki/Joan_Curran Samuel Curran was an Irish
-        // physicist who worked alongside his wife during WWII and invented the
-        // proximity fuse. https://en.wikipedia.org/wiki/Samuel_Curran
+        // https://en.wikipedia.org/wiki/Joan_Curran
+        // Samuel Curran was an Irish physicist who worked alongside his wife
+        // during WWII and invented the proximity fuse.
+        // https://en.wikipedia.org/wiki/Samuel_Curran
         "curran",
 
         // Marie Curie discovered radioactivity.
@@ -862,6 +864,11 @@ int main() {
         // win the Fields Medal. https://en.wikipedia.org/wiki/Maryam_Mirzakhani
         "mirzakhani",
 
+        // Rita Levi-Montalcini - Won Nobel Prize in Physiology or Medicine
+        // jointly with colleague Stanley Cohen for the discovery of nerve
+        // growth factor (https://en.wikipedia.org/wiki/Rita_Levi-Montalcini)
+        "montalcini",
+
         // Gordon Earle Moore - American engineer, Silicon Valley founding
         // father, author of Moore's law.
         // https://en.wikipedia.org/wiki/Gordon_Moore
@@ -997,11 +1004,6 @@ int main() {
         // the first American woman in space, and the youngest American
         // astronaut. https://en.wikipedia.org/wiki/Sally_Ride
         "ride",
-
-        // Rita Levi-Montalcini - Won Nobel Prize in Physiology or Medicine
-        // jointly with colleague Stanley Cohen for the discovery of nerve
-        // growth factor (https://en.wikipedia.org/wiki/Rita_Levi-Montalcini)
-        "montalcini",
 
         // Dennis Ritchie - co-creator of UNIX and the C programming language. -
         // https://en.wikipedia.org/wiki/Dennis_Ritchie
@@ -1187,6 +1189,12 @@ int main() {
         // into space - https://en.wikipedia.org/wiki/Dorothy_Vaughan
         "vaughan",
 
+        // Cédric Villani - French mathematician, won Fields Medal, Fermat Prize
+        // and Poincaré Price for his work in differential geometry and
+        // statistical mechanics.
+        // https://en.wikipedia.org/wiki/C%C3%A9dric_Villani
+        "villani",
+
         // Sir Mokshagundam Visvesvaraya - is a notable Indian engineer.  He is
         // a recipient of the Indian Republic's highest honour, the Bharat
         // Ratna, in 1955. On his birthday, 15 September is celebrated as
@@ -1199,12 +1207,6 @@ int main() {
         // embryonic development.
         // https://en.wikipedia.org/wiki/Christiane_N%C3%BCsslein-Volhard
         "volhard",
-
-        // Cédric Villani - French mathematician, won Fields Medal, Fermat Prize
-        // and Poincaré Price for his work in differential geometry and
-        // statistical mechanics.
-        // https://en.wikipedia.org/wiki/C%C3%A9dric_Villani
-        "villani",
 
         // Marlyn Wescoff - one of the original programmers of the ENIAC.
         // https://en.wikipedia.org/wiki/ENIAC -
