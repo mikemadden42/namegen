@@ -238,7 +238,7 @@ int main() {
 
         // Subrahmanyan Chandrasekhar - Astrophysicist known for his
         // mathematical theory on different stages and evolution in structures
-        // of the stars. He has won nobel prize for physics -
+        // of the stars. He has won Nobel Prize for physics -
         // https://en.wikipedia.org/wiki/Subrahmanyan_Chandrasekhar
         "chandrasekhar",
 
@@ -273,7 +273,7 @@ int main() {
         "chebyshev",
 
         // Joan Clarke - Bletchley Park code breaker during the Second World War
-        // who pioneered techniques that remained top secret for decades. Also
+        // who pioneered techniques that remained top secret for decades. Also,
         // an accomplished numismatist https://en.wikipedia.org/wiki/Joan_Clarke
         "clarke",
 
@@ -498,7 +498,7 @@ int main() {
         // https://en.wikipedia.org/wiki/Jane_Goodall
         "goodall",
 
-        // Stephen Jay Gould was was an American paleontologist, evolutionary
+        // Stephen Jay Gould was an American paleontologist, evolutionary
         // biologist, and historian of science. He is most famous for the theory
         // of punctuated equilibrium -
         // https://en.wikipedia.org/wiki/Stephen_Jay_Gould
@@ -882,7 +882,7 @@ int main() {
         // https://en.wikipedia.org/wiki/Ian_Murdock
         "murdock",
 
-        // May-Britt Moser - Nobel prize winner neuroscientist who contributed
+        // May-Britt Moser - Nobel Prize winner neuroscientist who contributed
         // to the discovery of grid cells in the brain.
         // https://en.wikipedia.org/wiki/May-Britt_Moser
         "moser",
@@ -898,7 +898,7 @@ int main() {
         // https://en.wikipedia.org/wiki/John_Forbes_Nash_Jr.
         "nash",
 
-        // John von Neumann - todays computer architectures are based on the von
+        // John von Neumann - today's computer architectures are based on the von
         // Neumann architecture.
         // https://en.wikipedia.org/wiki/Von_Neumann_architecture
         "neumann",
@@ -1264,12 +1264,12 @@ int main() {
         "yalow",
 
         // Ada Yonath - an Israeli crystallographer, the first woman from the
-        // Middle East to win a Nobel prize in the sciences.
+        // Middle East to win a Nobel Prize in the sciences.
         // https://en.wikipedia.org/wiki/Ada_Yonath
         "yonath",
 
         // Nikolay Yegorovich Zhukovsky (Russian: Никола́й Его́рович Жуко́вский,
-        // January 17 1847 – March 17, 1921) was a Russian scientist,
+        // January 17, 1847 – March 17, 1921) was a Russian scientist,
         // mathematician and engineer, and a founding father of modern aero- and
         // hydrodynamics. Whereas contemporary scientists scoffed at the idea of
         // human flight, Zhukovsky was the first to undertake the study of
