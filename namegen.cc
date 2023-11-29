@@ -898,7 +898,8 @@ int main() {
         // https://en.wikipedia.org/wiki/John_Forbes_Nash_Jr.
         "nash",
 
-        // John von Neumann - today's computer architectures are based on the von
+        // John von Neumann - today's computer architectures are based on the
+        // von
         // Neumann architecture.
         // https://en.wikipedia.org/wiki/Von_Neumann_architecture
         "neumann",
