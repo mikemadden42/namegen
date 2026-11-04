@@ -25,16 +25,16 @@
 
 ## Build and CI
 
-- [ ] In `CMakeLists.txt`, use `target_compile_options(namegen PRIVATE -Wall -Wextra -pedantic)`
+- [x] In `CMakeLists.txt`, use `target_compile_options(namegen PRIVATE -Wall -Wextra -pedantic)`
       instead of overwriting `CMAKE_CXX_FLAGS`, which replaces flags the user passes in.
       Add `set(CMAKE_CXX_STANDARD_REQUIRED ON)`.
-- [ ] Add at least one real test with `add_test`. Right now `ctest` runs nothing and always passes.
-- [ ] Add a sanitizer or hardened build to CI (it would have caught the bug above).
-- [ ] Update the workflow: move to `actions/checkout@v4` or later and remove the template's
-      boilerplate comments. Optionally add a matrix to build on macOS and Windows too.
-- [ ] Makefile: use `CXX`/`CXXFLAGS`, rely on the built-in rule instead of the custom `.cc:` rule,
-      use `rm -f` in `clean`, and reconsider running `strip` on every build. Or drop the Makefile
-      and keep only CMake.
+- [x] Add at least one real test with `add_test`. `tests/run_namegen.cmake` runs namegen
+      1,000 times and checks the exit status, stderr and output format.
+- [x] Add a sanitizer build to CI (`-DNAMEGEN_SANITIZE=ON`). It catches the original
+      out-of-bounds bug; a plain Release build does not.
+- [x] Update the workflow: move to `actions/checkout@v7`, remove the template's boilerplate
+      comments, and build and test on Ubuntu, macOS and Windows.
+- [x] Remove the Makefile and keep only CMake.
 
 ## Docs
 
