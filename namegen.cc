@@ -1,4 +1,8 @@
-// https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go
+// The word lists and their comments are derived from moby's name generator,
+// Copyright Docker, Inc., licensed under the Apache License, Version 2.0, and
+// have been converted to C++ and re-sorted. See THIRD_PARTY_NOTICES.
+// https://github.com/moby/moby/blob/v20.10.13/pkg/namesgenerator/names-generator.go
+
 // http://en.cppreference.com/w/cpp/string/basic_string_view
 // http://en.cppreference.com/w/cpp/numeric/random/uniform_int_distribution
 

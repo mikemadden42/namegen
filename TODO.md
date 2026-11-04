@@ -38,6 +38,8 @@
 
 ## Docs
 
-- [ ] Expand `README.md`: where the word lists come from (moby, Apache-2.0), how to build and run,
+- [x] Expand `README.md`: where the word lists come from (moby, Apache-2.0), how to build and run,
       and sample output.
-- [ ] Check that `LICENSE` is compatible with including moby's lists, and add attribution if needed.
+- [x] Check that `LICENSE` is compatible with including moby's lists, and add attribution if needed.
+      Added `THIRD_PARTY_NOTICES` with moby's Apache-2.0 license and the relevant part of its
+      NOTICE, and a license note at the top of `namegen.cc`.
