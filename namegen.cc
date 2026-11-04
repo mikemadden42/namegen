@@ -1279,15 +1279,11 @@ int main() {
         "zhukovsky",
     }};
 
-    std::random_device rd_left;
-    std::mt19937 gen_left(rd_left());
-    std::uniform_int_distribution<> dis_left(1, static_cast<int>(left.size()));
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<std::size_t> dis_left(0, left.size() - 1);
+    std::uniform_int_distribution<std::size_t> dis_right(0, right.size() - 1);
 
-    std::random_device rd_right;
-    std::mt19937 gen_right(rd_right());
-    std::uniform_int_distribution<> dis_right(1,
-                                              static_cast<int>(right.size()));
-
-    std::cout << left[dis_left(gen_left)] << '_' << right[dis_right(gen_right)]
+    std::cout << left[dis_left(gen)] << '_' << right[dis_right(gen)]
               << std::endl;
 }
