@@ -14,12 +14,14 @@
 ## Code quality
 
 - [x] Use one seeded `std::mt19937` for both picks instead of two `random_device`s and two engines.
-- [ ] Add `#include <string>`. It currently compiles only because `<iostream>` pulls it in.
-- [ ] Make the word lists `static const std::array<std::string_view, N>` (or `constexpr`) so
-      about 350 `std::string`s aren't built on every run. Drop the leftover `{{ ... }}` double braces.
-- [ ] Update the stale header comment: the build line says `-std=c++14` and `names.cc`.
-- [ ] Re-sort the lists: `compassionate` (left) and `curie` (right) are out of alphabetical order.
-- [ ] Optional: reroll `boring_wozniak` like moby does.
+- [x] Add `#include <string>`. No longer needed: the lists are `std::string_view`, and
+      `<string_view>` is included instead.
+- [x] Make the word lists `static constexpr std::string_view[]` so about 350 `std::string`s
+      aren't built on every run. Drop the leftover `{{ ... }}` double braces.
+- [x] Update the stale header comment: the build line says `-std=c++14` and `names.cc`.
+- [x] Re-sort the lists. Entries out of place were `cool`, `interesting` and `mystifying`
+      (left) and `curran`, `hellman`, `meitner`, `murdock` and `rhodes` (right).
+- [x] Reroll `boring_wozniak` like moby does.
 
 ## Build and CI
 
