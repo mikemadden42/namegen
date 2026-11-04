@@ -1,46 +1,46 @@
 // https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go
-// http://en.cppreference.com/w/cpp/container/vector
+// http://en.cppreference.com/w/cpp/string/basic_string_view
 // http://en.cppreference.com/w/cpp/numeric/random/uniform_int_distribution
-// https://stackoverflow.com/questions/13935441/member-variable-of-type-stdarrayt
 
-// clang++ -Wall -O2 -std=c++14 -march=native -o names names.cc
+// clang++ -Wall -O2 -std=c++17 -march=native -o namegen namegen.cc
 
 #include <iostream>
+#include <iterator>
 #include <random>
-#include <vector>
+#include <string_view>
 
 int main() {
-    std::vector<std::string> left = {{
-        "admiring",      "adoring",     "affectionate",  "agitated",
-        "amazing",       "angry",       "awesome",       "beautiful",
-        "blissful",      "bold",        "boring",        "brave",
-        "busy",          "charming",    "clever",        "cool",
-        "compassionate", "competent",   "condescending", "confident",
-        "cranky",        "crazy",       "dazzling",      "determined",
-        "distracted",    "dreamy",      "eager",         "ecstatic",
-        "elastic",       "elated",      "elegant",       "eloquent",
-        "epic",          "exciting",    "fervent",       "festive",
-        "flamboyant",    "focused",     "friendly",      "frosty",
-        "funny",         "gallant",     "gifted",        "goofy",
-        "gracious",      "great",       "happy",         "hardcore",
-        "heuristic",     "hopeful",     "hungry",        "infallible",
-        "inspiring",     "interesting", "intelligent",   "jolly",
-        "jovial",        "keen",        "kind",          "laughing",
-        "loving",        "lucid",       "magical",       "mystifying",
-        "modest",        "musing",      "naughty",       "nervous",
-        "nice",          "nifty",       "nostalgic",     "objective",
-        "optimistic",    "peaceful",    "pedantic",      "pensive",
-        "practical",     "priceless",   "quirky",        "quizzical",
-        "recursing",     "relaxed",     "reverent",      "romantic",
-        "sad",           "serene",      "sharp",         "silly",
-        "sleepy",        "stoic",       "strange",       "stupefied",
-        "suspicious",    "sweet",       "tender",        "thirsty",
-        "trusting",      "unruffled",   "upbeat",        "vibrant",
-        "vigilant",      "vigorous",    "wizardly",      "wonderful",
-        "xenodochial",   "youthful",    "zealous",       "zen",
-    }};
+    static constexpr std::string_view left[] = {
+        "admiring",    "adoring",       "affectionate", "agitated",
+        "amazing",     "angry",         "awesome",      "beautiful",
+        "blissful",    "bold",          "boring",       "brave",
+        "busy",        "charming",      "clever",       "compassionate",
+        "competent",   "condescending", "confident",    "cool",
+        "cranky",      "crazy",         "dazzling",     "determined",
+        "distracted",  "dreamy",        "eager",        "ecstatic",
+        "elastic",     "elated",        "elegant",      "eloquent",
+        "epic",        "exciting",      "fervent",      "festive",
+        "flamboyant",  "focused",       "friendly",     "frosty",
+        "funny",       "gallant",       "gifted",       "goofy",
+        "gracious",    "great",         "happy",        "hardcore",
+        "heuristic",   "hopeful",       "hungry",       "infallible",
+        "inspiring",   "intelligent",   "interesting",  "jolly",
+        "jovial",      "keen",          "kind",         "laughing",
+        "loving",      "lucid",         "magical",      "modest",
+        "musing",      "mystifying",    "naughty",      "nervous",
+        "nice",        "nifty",         "nostalgic",    "objective",
+        "optimistic",  "peaceful",      "pedantic",     "pensive",
+        "practical",   "priceless",     "quirky",       "quizzical",
+        "recursing",   "relaxed",       "reverent",     "romantic",
+        "sad",         "serene",        "sharp",        "silly",
+        "sleepy",      "stoic",         "strange",      "stupefied",
+        "suspicious",  "sweet",         "tender",       "thirsty",
+        "trusting",    "unruffled",     "upbeat",       "vibrant",
+        "vigilant",    "vigorous",      "wizardly",     "wonderful",
+        "xenodochial", "youthful",      "zealous",      "zen",
+    };
 
-    std::vector<std::string> right = {{
+    static constexpr std::string_view right[] = {
         // Maria Gaetana Agnesi - Italian mathematician, philosopher, theologian
         // and humanitarian. She was the first woman to write a mathematics
         // handbook and the first woman appointed as a Mathematics Professor at
@@ -299,6 +299,10 @@ int main() {
         // https://en.wikipedia.org/wiki/Seymour_Cray
         "cray",
 
+        // Marie Curie discovered radioactivity.
+        // https://en.wikipedia.org/wiki/Marie_Curie.
+        "curie",
+
         // This entry reflects a husband and wife team who worked together:
         // Joan Curran was a Welsh scientist who developed radar and invented
         // chaff, a radar countermeasure.
@@ -307,10 +311,6 @@ int main() {
         // during WWII and invented the proximity fuse.
         // https://en.wikipedia.org/wiki/Samuel_Curran
         "curran",
-
-        // Marie Curie discovered radioactivity.
-        // https://en.wikipedia.org/wiki/Marie_Curie.
-        "curie",
 
         // Charles Darwin established the principles of natural evolution.
         // https://en.wikipedia.org/wiki/Charles_Darwin.
@@ -537,14 +537,14 @@ int main() {
         // https://en.wikipedia.org/wiki/Stephen_Hawking
         "hawking",
 
+        // Werner Heisenberg was a founding father of quantum mechanics.
+        // https://en.wikipedia.org/wiki/Werner_Heisenberg
+        "heisenberg",
+
         // Martin Edward Hellman - American cryptologist, best known for his
         // invention of public-key cryptography in co-operation with Whitfield
         // Diffie and Ralph Merkle. https://en.wikipedia.org/wiki/Martin_Hellman
         "hellman",
-
-        // Werner Heisenberg was a founding father of quantum mechanics.
-        // https://en.wikipedia.org/wiki/Werner_Heisenberg
-        "heisenberg",
 
         // Grete Hermann was a German philosopher noted for her philosophical
         // work on the foundations of quantum mechanics.
@@ -825,6 +825,11 @@ int main() {
         // https://en.wikipedia.org/wiki/Kathleen_Antonelli
         "mcnulty",
 
+        // Lise Meitner - Austrian/Swedish physicist who was involved in the
+        // discovery of nuclear fission. The element meitnerium is named after
+        // her - https://en.wikipedia.org/wiki/Lise_Meitner
+        "meitner",
+
         // Gregor Johann Mendel - Czech scientist and founder of genetics.
         // https://en.wikipedia.org/wiki/Gregor_Mendel
         "mendel",
@@ -835,11 +840,6 @@ int main() {
         // elements and also to predict the properties of eight elements yet to
         // be discovered. https://en.wikipedia.org/wiki/Dmitri_Mendeleev
         "mendeleev",
-
-        // Lise Meitner - Austrian/Swedish physicist who was involved in the
-        // discovery of nuclear fission. The element meitnerium is named after
-        // her - https://en.wikipedia.org/wiki/Lise_Meitner
-        "meitner",
 
         // Carla Meninsky, was the game designer and programmer for Atari 2600
         // games Dodge 'Em and Warlords.
@@ -878,14 +878,14 @@ int main() {
         // of the Morse code - https://en.wikipedia.org/wiki/Samuel_Morse
         "morse",
 
-        // Ian Murdock - founder of the Debian project -
-        // https://en.wikipedia.org/wiki/Ian_Murdock
-        "murdock",
-
         // May-Britt Moser - Nobel Prize winner neuroscientist who contributed
         // to the discovery of grid cells in the brain.
         // https://en.wikipedia.org/wiki/May-Britt_Moser
         "moser",
+
+        // Ian Murdock - founder of the Debian project -
+        // https://en.wikipedia.org/wiki/Ian_Murdock
+        "murdock",
 
         // John Napier of Merchiston - Scottish landowner known as an
         // astronomer, mathematician and physicist. Best known for his discovery
@@ -1000,6 +1000,11 @@ int main() {
         // https://en.wikipedia.org/wiki/Srinivasa_Ramanujan
         "ramanujan",
 
+        // Ida Rhodes - American pioneer in computer programming, designed the
+        // first computer used for Social Security.
+        // https://en.wikipedia.org/wiki/Ida_Rhodes
+        "rhodes",
+
         // Sally Kristen Ride was an American physicist and astronaut. She was
         // the first American woman in space, and the youngest American
         // astronaut. https://en.wikipedia.org/wiki/Sally_Ride
@@ -1008,11 +1013,6 @@ int main() {
         // Dennis Ritchie - co-creator of UNIX and the C programming language. -
         // https://en.wikipedia.org/wiki/Dennis_Ritchie
         "ritchie",
-
-        // Ida Rhodes - American pioneer in computer programming, designed the
-        // first computer used for Social Security.
-        // https://en.wikipedia.org/wiki/Ida_Rhodes
-        "rhodes",
 
         // Julia Hall Bowman Robinson - American mathematician renowned for her
         // contributions to the fields of computability theory and computational
@@ -1277,13 +1277,21 @@ int main() {
         // airflow. He is often called the Father of Russian Aviation.
         // https://en.wikipedia.org/wiki/Nikolay_Yegorovich_Zhukovsky
         "zhukovsky",
-    }};
+    };
 
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<std::size_t> dis_left(0, left.size() - 1);
-    std::uniform_int_distribution<std::size_t> dis_right(0, right.size() - 1);
+    std::uniform_int_distribution<std::size_t> dis_left(0, std::size(left) - 1);
+    std::uniform_int_distribution<std::size_t> dis_right(0,
+                                                         std::size(right) - 1);
 
-    std::cout << left[dis_left(gen)] << '_' << right[dis_right(gen)]
-              << std::endl;
+    std::string_view adjective;
+    std::string_view surname;
+    do {
+        adjective = left[dis_left(gen)];
+        surname = right[dis_right(gen)];
+        // Steve Wozniak is not boring.
+    } while (adjective == "boring" && surname == "wozniak");
+
+    std::cout << adjective << '_' << surname << std::endl;
 }
